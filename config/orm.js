@@ -59,11 +59,12 @@ connection.query('INSERT INTO burgers SET ?', {
     });
 
   },
-
+var updateOne =
+{
   updateOne: function(burgerName, callback){
 
-    connection.query('UPDATE burgers SET ? WHERE ?', [{devoured: true}, {id: burgerName}], function (err, result) {
-        if (err) throw err;
+    connection.query("UPDATE burgers SET ? WHERE ?", [{devoured: true}, {id: burgerName}], function (err, result) {
+        if (err) {throw err};
         callback(result);
       });
 
